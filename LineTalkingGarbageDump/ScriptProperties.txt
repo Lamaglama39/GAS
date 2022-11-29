@@ -1,0 +1,3 @@
+url = 'https://api.line.me/v2/bot/message/push'
+token = 'チャネル アクセス トークン'
+user_id = 'LINEユーザーID'

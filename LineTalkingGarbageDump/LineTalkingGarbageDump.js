@@ -3,18 +3,17 @@
  */
 
 function TalkingGarbageDump() {
-  //プッシュメッセージURL
-  const url = 'https://api.line.me/v2/bot/message/push';
-  //チャネルアクセストークン
-  const token = '*******';
-  
+  //Line Messaging API情報　基本設定
+  const url = PropertiesService.getScriptProperties().getProperty("url");
+  const token = PropertiesService.getScriptProperties().getProperty("token");
+  const user_id = PropertiesService.getScriptProperties().getProperty("user_id");  
   const message = getMessageAboutTrash_(new Date());
   if (!message) return;
   
   //リクエスト本文
   const payload = {
     //LINEユーザーID
-    to: '*******',
+    to: user_id,
     messages: [
       { type: 'text', text: message }
      ]
